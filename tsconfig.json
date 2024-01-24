@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "target": "ES6",  // 指定编译后的 JavaScript 代码的目标版本。
+    "module": "ESNext", // 指定生成的 JavaScript 代码采用的模块系统。例如： require/modules.export、import/export、amd
+    "jsx": "react-jsx",
+    "esModuleInterop": true,  // 允许在使用 CommonJS 模块系统的情况下，以更简便的方式导入和使用 ECMAScript 模块, 当为 true 时，你可以更方便地导入使用 CommonJS 模块的库，而不需要额外的 default 属性
+    "forceConsistentCasingInFileNames": true, // 强制在文件名中保持一致的大小写。
+    "skipLibCheck": true , // 用于跳过对声明文件（.d.ts）的检查，以加快编译过程。
+    "types": ["node"], // 用于指定要包含的声明文件, 通过配置 types，可以显式指定要包含的声明文件，减少不必要的类型检查和编译时间，同时提高项目的可维护性, 也可以预防在写代码阶段找不到对应类型
+    "moduleResolution": "Bundler", // 告诉tsc使用哪种方式去解析路径以及查找文件
+    "strictNullChecks": true, // 用于在类型检查时对 null 和 undefined 进行严格检查
+    "experimentalDecorators": true, // ，用于启用对装饰器的支持。
+    "allowJs": true, // 项目中可能同时包含 JavaScript 和 TypeScript 文件，通过设置 allowJs，可以让 TypeScript 编译器处理 JavaScript 文件，使得项目逐渐迁移至 TypeScript 更加灵活
+    "sourceMap": true, // 用于生成与编译后的 JavaScript 文件相对应的源映射文件（.map 文件）
+    "declaration": true,
+    "declarationDir": "./dist",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@/components/*": [
+        "./src/components/*"
+      ],
+      "@/assets/*": [
+        "./src/assets/*"
+      ],
+      "@/utils/*": [
+        "./src/utils/*"
+      ],
+      "@/hook/*": [
+        "./src/hook/*"
+      ],
+      "@/icon/*": [
+        "./src/icon/*"
+      ]
+    }
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "target": "ES6",
+      "module": "CommonJS"
+    }
+  },
+  "exclude": ["node_modules"],
+  "include": ["src/**/*", "scripts", "config"]
+}
